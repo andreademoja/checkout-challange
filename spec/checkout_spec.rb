@@ -6,4 +6,13 @@ describe Checkout do
     expect(:products_list).not_to be_empty
   end
 
+  it 'has an empty cart on initialize' do
+    expect(subject.cart).to be_empty
+  end
+
+  it 'allows to add products to cart' do
+    subject.add_to_cart(1)
+    expect(subject.cart).not_to be_empty 
+  end
+
 end

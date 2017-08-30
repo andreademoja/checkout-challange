@@ -1,9 +1,12 @@
-- :item:
-    :product: Tie
-    :price: €9.25
-- :item:
-    :product: Sweater
-    :price: €45.00
-- :item:
-    :product: Skirt
-    :price: €19.95
+- :product:
+    :type: Tie
+    :price: 9.25
+    :code: 1
+- :product:
+    :type: Sweater
+    :price: 45.00
+    :code: 2
+- :product:
+    :type: Skirt
+    :price: 19.95
+    :code: 3
