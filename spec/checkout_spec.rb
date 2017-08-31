@@ -17,7 +17,6 @@ describe Checkout do
 
   it 'is able to return a total cost' do
     subject.add_to_cart(1)
-    subject.add_to_cart(2)
     expect(subject.total_cost).to eq 9.25
   end
 
