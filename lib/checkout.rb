@@ -15,9 +15,14 @@ class Checkout
 
   def total_cost
     @total_value = 0
+    number_of_ties = @cart.group_by(&:itself).map { |k,v| [k, v.count] }.to_h[1]
     @cart.each do |code|
       product = products_list.detect { |obj| obj[:product][:code] == code }
-      @total_value += product[:product][:price]
+      if number_of_ties.to_i > 1 && product[:product].key?(:bundle_price)
+        @total_value += product[:product][:bundle_price]
+      else
+        @total_value += product[:product][:price]
+      end
     end
     if @total_value < 60
       return @total_value

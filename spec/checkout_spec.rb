@@ -26,6 +26,12 @@ describe Checkout do
     expect(subject.total_cost).to eq 58.46
   end
 
+  it 'reduce the cost of the ties if the users buys more than 1' do
+    subject.add_to_cart(1)
+    subject.add_to_cart(1)
+    expect(subject.total_cost).to eq 17.00
+  end
+
 
 
 end
