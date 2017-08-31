@@ -20,4 +20,12 @@ describe Checkout do
     expect(subject.total_cost).to eq 9.25
   end
 
+  it 'apply a 10% off if the client spend more than 60' do
+    subject.add_to_cart(2)
+    subject.add_to_cart(3)
+    expect(subject.total_cost).to eq 58.46
+  end
+
+
+
 end
